@@ -43,7 +43,7 @@ public class music
     {
         try
         {
-            filePath = "Your path for the file";
+            filePath = "media/music.wav";
             music audioPlayer = 
                             new music();
               

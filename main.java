@@ -27,9 +27,9 @@ class Main {
 
     public static void main(String[] args) throws InterruptedException {
         Main.start("urmom");
-        System.out.println("hi");
+        System.out.println("hi" + "\uD83C\uDF5E");
         Thread.sleep(1000);
-        System.out.print("\033[H\033[2J");
+        // System.out.print("\033[H\033[2J");
     }
 }
         
