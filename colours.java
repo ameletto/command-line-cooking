@@ -73,7 +73,7 @@ class Colours {
         public static final String CYAN_BACKGROUND_BRIGHT = "\033[0;106m";  // CYAN
         public static final String WHITE_BACKGROUND_BRIGHT = "\033[0;107m";   // WHITE
     }
-    public static void main(String[] args) {
-        System.out.print(ConsoleColours.YELLOW + "hi there");
-    }
+        public static void main(String[] args) {
+            System.out.println(ConsoleColours.RED_BRIGHT + "hi");
+}
 }
