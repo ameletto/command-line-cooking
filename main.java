@@ -28,6 +28,7 @@ class Main {
 	// }
 
 	public static void mainMenu() {
+		System.out.print("\033[H\033[2J");
 		System.out.println("=========================================================================================");
 		System.out.println();
 		System.out.println("Welcome to... COMMAND-LINE");
@@ -71,6 +72,7 @@ class Main {
 		boolean hasCakePan = false;
 		Scanner input = new Scanner(System.in);
 
+		System.out.print("\033[H\033[2J");
 		System.out.println("Press [0] to go back");
 		System.out.println("");
 		System.out.println("======================================================================");
@@ -87,13 +89,13 @@ class Main {
 		System.out.println();
 		System.out.println("You are in the kitchen.");
 		System.out.println("Where would you like to go first? Press the number that corresponds with the location.");
-
+//trycatch
 		String uInput = input.nextLine();
 		if (uInput.equals("0")) {
 			Main.mainMenu();
 		} 
 		else if (uInput.equals("1")) {
-			System.out.println("[0] Main menu");
+			System.out.println("[0] Back to main menu");
 			System.out.println();
 			System.out.println("==============");
 			for (int i = 0; i < fridgeInventory.length; i++) {
@@ -103,6 +105,7 @@ class Main {
 			System.out.println("You are at the fridge.");
 			if (hasBowl == false) {
 				System.out.println("Hint: you need something to put your ingredients in.");
+				Main.strawbShort();
 			} 
 			else {
 				while (true) {
@@ -215,10 +218,9 @@ class Main {
 						}
 						}
 					}
-				}
-				
-	}}}
-	else if(uInput.equals("5"))
+				}	
+	}}
+	else if(uInput.equals("4"))
 	{
 		System.out.println("==============");
 		for (int i = 0; i < cupboardInventory.length; i++) {
@@ -227,17 +229,36 @@ class Main {
 		System.out.println("==============");
 		System.out.println("You are at the cupboard.");
 		System.out.println("Which container would you like to use first? Press the number that corresponds with the container.");
-		uInput = input.nextLine();
-		if(uInput.equals("1")){
-			hasBowl = true;
+		while(true){
+			uInput = input.nextLine();
+			if(uInput.equals("1")){
+				hasBowl = true;
+				System.out.println("Bowl acquired!");
+				try {
+					Thread.sleep(1000);
+				} catch(InterruptedException e) {
+					System.out.println(":D");
+				}
+				Main.strawbShort();
+				break;
+			}
+			else if(uInput.equals("2")){
+				hasCakePan = true;
+				System.out.println("Cake pan acquired!");
+				try {
+					Thread.sleep(1000);
+				} catch(InterruptedException e) {
+					System.out.println(":D");
+				}
+				Main.strawbShort();
+				break;
+			}
+			else{
+				System.out.println("You got nothing because that was not a valid option, please try again.");
+			}
 		}
-		else if(uInput.equals("2")){
-			hasCakePan = true;
-		}
-		else{
-			System.out.println("Try again");
-		}
-	}else if(uInput.equals("6"))
+		
+	}else if(uInput.equals("5"))
 	{
 		System.out.println("==============");
 		for (int i = 0; i < pantryInventory.length; i++) {
@@ -245,13 +266,101 @@ class Main {
 		}
 		System.out.println("==============");
 		System.out.println("You are in the pantry.");
-		System.out.println("Which container would you like to use first? Press the number that corresponds with the container.");
-		uInput = input.nextLine();
-	}else if(uInput.equals("7"))
+		System.out.println("Which ingredient would you like to put in your bowl? Press the number that corresponds with the ingredient. Press [D] when done.");
+		while(true){
+			uInput = input.nextLine();
+			if(uInput.equals("D")){
+				Main.strawbShort();
+				break;
+			}
+			else if(uInput.equals("1")){
+				System.out.println("Flour... in the bowl!");
+			}
+			else if(uInput.equals("2")){
+				System.out.println("Sugar... in the bowl!");
+			}
+			else{
+				System.out.println("There's literally nothing in your bowl because you don't know how to read. Please try again.");
+		}}
+	}else if(uInput.equals("6"))
 	{
+		while(true){
 		System.out.println("You are at the sink.");
 		System.out.println("Would you like some water? Press [Y] if yes or [N] if no.");
-	}}
+		while(true){
+			uInput = input.nextLine();
+			if(uInput.equals("y")){
+				System.out.println("What would you like to do with the water?");
+				System.out.println("[1] Pour it into the bowl");
+				System.out.println("[2] Drink it because hydrate or diedrate");
+				System.out.println("[3] Water the plant over there");
+				uInput = input.nextLine();
+				if(uInput.equals("1")){
+					System.out.println("Water... in the bowl!");
+					try {
+						Thread.sleep(1000);
+					} catch(InterruptedException e) {
+						System.out.println(":D");
+					}
+					break;
+				}
+				else if(uInput.equals("2")){
+					System.out.println("Ahh, that was some hydrating dihydrogen monoxide.");
+					try {
+						Thread.sleep(1000);
+					} catch(InterruptedException e) {
+						System.out.println(":D");
+					}
+					break;
+				}
+				else if(uInput.equals("3")){
+					System.out.println("You water the plant and...");
+					try {
+						Thread.sleep(1000);
+					} catch(InterruptedException e) {
+						System.out.println(":D");
+					}
+					System.out.println("The plant grows into a giant venus flytrap, spreading across the kitchen floor and breaking through the ceiling.");
+					try {
+						Thread.sleep(1000);
+					} catch(InterruptedException e) {
+						System.out.println(":D");
+					}
+					System.out.println("\"Mmm this growth spurt has made me really hungry\"");
+					try {
+						Thread.sleep(1000);
+					} catch(InterruptedException e) {
+						System.out.println(":D");
+					}
+					System.out.println("The plant looks down and sees...");
+					try {
+						Thread.sleep(1000);
+					} catch(InterruptedException e) {
+						System.out.println(":D");
+					}
+					System.out.println("You! A mere human being.");
+					try {
+						Thread.sleep(1000);
+					} catch(InterruptedException e) {
+						System.out.println(":D");
+					}
+					System.out.println("\"What a kind offering from the gods, don't mind if I do\"");
+					try {
+						Thread.sleep(1000);
+					} catch(InterruptedException e) {
+						System.out.println(":D");
+					}
+					System.out.print("\033[H\033[2J");
+					System.out.println("Unfortunately, you were eaten by your house plant. All game progress has been lost. Moral of the story: Never water your plants. Press any key to go back to the main menu.");
+					uInput = input.nextLine();
+					Main.mainMenu();
+					break;
+				}
+				else{
+					System.out.println("You got nothing because that was not a valid option, please try again.");
+				}
+			}
+	}}}}
 
 	public static void chocChipCook(){
 
